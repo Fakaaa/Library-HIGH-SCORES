@@ -12,4 +12,5 @@ namespace HSmanagement
 	extern void add_Score(long int newScore, string newName, long int scores[size], string names[size]);
 	extern int find_Score(string name, long int scores[size], string names[size]);
 	extern void higher_To_Lowest(long int scores[size], string names[size]);
+	extern void lowest_To_Highest(long int scores[size], string names[size]);
 }

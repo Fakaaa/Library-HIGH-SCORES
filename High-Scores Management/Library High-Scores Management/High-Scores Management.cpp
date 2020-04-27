@@ -82,4 +82,21 @@ namespace HSmanagement
 			}
 		}
 	}
+
+	void lowest_To_Highest(long int scores[size], string names[size]){
+		int auxScore = 0;
+		string auxName;
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size - 1; j++) {
+				if (scores[j] > scores[j + 1]) {
+					auxScore = scores[j];
+					auxName = names[j];
+					names[j] = names[j + 1];
+					scores[j] = scores[j + 1];
+					names[j + 1] = auxName;
+					scores[j + 1] = auxScore;
+				}
+			}
+		}
+	}
 }

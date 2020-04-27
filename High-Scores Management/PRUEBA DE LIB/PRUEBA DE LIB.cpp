@@ -29,6 +29,10 @@ void MaxToMin(){
 	HSmanagement::higher_To_Lowest(scores, names);
 }
 
+void MinToMax() {
+	HSmanagement::lowest_To_Highest(scores, names);
+}
+
 void SearchScore() {
 	string nameAux;
 	int scoreSearched = 0;
@@ -58,8 +62,10 @@ void interfaz(){
 		cout << "[1] AGREGAR NUEVO PUNTAJE" << endl;
 		cout << "[2] BUSCAR PUNTAJE" << endl;
 		cout << "[3] ORDENAR DE MAYOR A MENOR" << endl;
-		cout << "[4] COPIAR LA TABLA A OTRA TABLA" << endl;
-		cout << "[5] SALIR DEL GESTOR DE PUNTAJES" << endl;
+		cout << "[4] ORDENAR DE MENOR A MAYOR" << endl;
+		cout << "[5] COPIAR LA TABLA A OTRA TABLA" << endl;
+		cout << "[6] LIMPIAR TABLA DE PUNTAJES" << endl;
+		cout << "[7] SALIR DEL GESTOR DE PUNTAJES" << endl;
 
 		cin >> eleccion;
 
@@ -79,9 +85,17 @@ void interfaz(){
 			showTable();
 			break;
 		case 4:	system("cls");
+			MinToMax();
+			showTable();
+			break;
+		case 5:system("cls");
 			CopyScoreTable();
 			break;
-		case 5:onMenu = false;
+		case 6: system("cls");
+			clean_Table(scores, names);
+			cout << "Tabla limpiada con exito!" << endl;
+			break;
+		case 7:onMenu = false;
 			break;
 		}
 	}
